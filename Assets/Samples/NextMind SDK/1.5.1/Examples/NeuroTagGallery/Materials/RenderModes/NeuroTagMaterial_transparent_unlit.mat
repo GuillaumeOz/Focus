@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: NeuroTagMaterial_transparent_unlit
-  m_Shader: {fileID: 4800000, guid: 060590c90c36419468a932a62cf61528, type: 3}
+  m_Shader: {fileID: 4800000, guid: 781d70ba62f3da14d9ce9da2a4e675ae, type: 3}
   m_ValidKeywords:
   - CONSTANT_SIZE
   - MAIN_ALPHA
@@ -79,6 +79,7 @@ Material:
     m_Ints: []
     m_Floats:
     - PixelSnap: 0
+    - _AlphaCutoff: 0.5
     - _BeansDensity: 1
     - _Blend: 1
     - _BumpScale: 1

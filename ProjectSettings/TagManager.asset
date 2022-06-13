@@ -12,6 +12,13 @@ TagManager:
   - DeadEnd
   - Success
   - DeathVolume
+  - Corner1
+  - Corner2
+  - Corner3
+  - Corner4
+  - Corner5
+  - Corner6
+  - Corner7
   layers:
   - Default
   - TransparentFX

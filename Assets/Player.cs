@@ -14,17 +14,51 @@ public class Player : MonoBehaviour
     private bool l;
     private bool r;
     private bool rr;
-    private bool wide = false;
-    private bool narrow = false;
-    private bool wn = false;
+    private bool wide;
+    private bool narrow;
+    private bool wn;
+    public GameObject tag1;
+    public GameObject tag2;
+    public GameObject tag3;
+    public GameObject tag4;
+    public GameObject tag5;
+    public GameObject tag6;
+    public GameObject tag7;
+    public GameObject tag8;
+    public GameObject tag9;
+    public GameObject tag10;
+    public GameObject tag11;
+    public GameObject tag12;
+    public GameObject tag13;
+    public GameObject tag14;
+    public GameObject tag15;
+    public GameObject tag16;
+    public GameObject tag17;
+    public GameObject tag18;
     public AudioSource source;
     public AudioSource sourceBack;
     public AudioClip turnNoise;
     private Vector3 startPos;
     // Start is called before the first frame update
     void Start()
-    {
+    {      
         startPos = transform.position;
+    }
+
+    public void TurnLeft() {
+        l = true;
+    }
+
+    public void TurnRight() {
+        r = true;
+    }
+
+    public void TurnLeftLeft() {
+        ll = true;
+    }
+
+    public void TurnRightRight() {
+        rr = true;
     }
 
     // Update is called once per frame
@@ -55,24 +89,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TurnLeft() {
-        l = true;
-    }
-
-    public void TurnRight() {
-        r = true;
-    }
-
-    public void TurnLeftLeft() {
-        ll = true;
-    }
-
-    public void TurnRightRight() {
-        rr = true;
-    }
-
     private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "WN") {
+        if (other.gameObject.tag == "Corner1") {
+            tag1.SetActive(true);
+            tag2.SetActive(true);
+            tag3.SetActive(true);
+            tag4.SetActive(true);
             ll = false;
             l = false;
             r = false;
@@ -80,7 +102,27 @@ public class Player : MonoBehaviour
             goUp = false;
             wn = true;
         }
-        else if (other.gameObject.tag == "Wide") {
+        else if (other.gameObject.tag == "Corner2") {
+            tag1.SetActive(false);
+            tag2.SetActive(false);
+            tag3.SetActive(false);
+            tag4.SetActive(false);
+            tag5.SetActive(true);
+            tag6.SetActive(true);
+            ll = false;
+            l = false;
+            r = false;
+            rr = false;
+            goUp = false;
+            narrow = true;
+        }
+        else if (other.gameObject.tag == "Corner3") {
+            tag1.SetActive(false);
+            tag2.SetActive(false);
+            tag3.SetActive(false);
+            tag4.SetActive(false);
+            tag7.SetActive(true);
+            tag8.SetActive(true);
             ll = false;
             l = false;
             r = false;
@@ -88,7 +130,57 @@ public class Player : MonoBehaviour
             goUp = false;
             wide = true;
         }
-        else if (other.gameObject.tag == "Narrow") {
+        else if (other.gameObject.tag == "Corner4") {
+            tag5.SetActive(false);
+            tag6.SetActive(false);
+            tag7.SetActive(false);
+            tag8.SetActive(false);
+            tag9.SetActive(true);
+            tag10.SetActive(true);
+            tag11.SetActive(true);
+            tag12.SetActive(true);
+            ll = false;
+            l = false;
+            r = false;
+            rr = false;
+            goUp = false;
+            wn = true;
+        }
+        else if (other.gameObject.tag == "Corner5") {
+            tag9.SetActive(false);
+            tag10.SetActive(false);
+            tag11.SetActive(false);
+            tag12.SetActive(false);
+            tag13.SetActive(true);
+            tag14.SetActive(true);
+            ll = false;
+            l = false;
+            r = false;
+            rr = false;
+            goUp = false;
+            narrow = true;
+        }
+        else if (other.gameObject.tag == "Corner6") {
+            tag9.SetActive(false);
+            tag10.SetActive(false);
+            tag11.SetActive(false);
+            tag12.SetActive(false);
+            tag15.SetActive(true);
+            tag16.SetActive(true);
+            ll = false;
+            l = false;
+            r = false;
+            rr = false;
+            goUp = false;
+            wide = true;
+        }
+        else if (other.gameObject.tag == "Corner7") {
+            tag9.SetActive(false);
+            tag10.SetActive(false);
+            tag11.SetActive(false);
+            tag12.SetActive(false);
+            tag17.SetActive(true);
+            tag18.SetActive(true);
             ll = false;
             l = false;
             r = false;
@@ -126,6 +218,24 @@ public class Player : MonoBehaviour
             r = false;
             rr = false;
             goUp = true;
+            tag1.SetActive(false);
+            tag2.SetActive(false);
+            tag3.SetActive(false);
+            tag4.SetActive(false);
+            tag5.SetActive(false);
+            tag6.SetActive(false);
+            tag7.SetActive(false);
+            tag8.SetActive(false);
+            tag9.SetActive(false);
+            tag10.SetActive(false);
+            tag11.SetActive(false);
+            tag12.SetActive(false);
+            tag13.SetActive(false);
+            tag14.SetActive(false);
+            tag15.SetActive(false);
+            tag16.SetActive(false);              
+            tag17.SetActive(false);
+            tag18.SetActive(false);
         }
     }
 }
