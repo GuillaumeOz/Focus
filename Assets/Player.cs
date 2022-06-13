@@ -14,9 +14,9 @@ public class Player : MonoBehaviour
     private bool l;
     private bool r;
     private bool rr;
-    private bool wide;
-    private bool narrow;
-    private bool wn;
+    private bool wide = false;
+    private bool narrow = false;
+    private bool wn = false;
     public AudioSource source;
     public AudioSource sourceBack;
     public AudioClip turnNoise;
@@ -51,26 +51,24 @@ public class Player : MonoBehaviour
                     source.PlayOneShot(turnNoise);
                     transform.Translate(-ballspeed * Time.deltaTime, -ballspeed / 2 * Time.deltaTime, 0);
                 }
-                else {
-                    if (Input.GetKey(KeyCode.Alpha1) && wn)
-                        ll = true;
-                    else if (Input.GetKey(KeyCode.Alpha2) && wn)
-                        l = true;
-                    else if (Input.GetKey(KeyCode.Alpha3) && wn)
-                        r = true;
-                    else if (Input.GetKey(KeyCode.Alpha4) && wn)
-                        rr = true;
-                    else if (Input.GetKey(KeyCode.Alpha1) && wide)
-                        ll = true;
-                    else if (Input.GetKey(KeyCode.Alpha1) && narrow)
-                        l = true;
-                    else if (Input.GetKey(KeyCode.Alpha2) && wide)
-                        rr = true;
-                    else if (Input.GetKey(KeyCode.Alpha2) && narrow)
-                        r = true;
-                }
             }
         }
+    }
+
+    public void TurnLeft() {
+        l = true;
+    }
+
+    public void TurnRight() {
+        r = true;
+    }
+
+    public void TurnLeftLeft() {
+        ll = true;
+    }
+
+    public void TurnRightRight() {
+        rr = true;
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
