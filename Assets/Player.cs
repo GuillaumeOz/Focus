@@ -14,9 +14,6 @@ public class Player : MonoBehaviour
     private bool l;
     private bool r;
     private bool rr;
-    private bool wide;
-    private bool narrow;
-    private bool wn;
     public GameObject tag1;
     public GameObject tag2;
     public GameObject tag3;
@@ -100,7 +97,6 @@ public class Player : MonoBehaviour
             r = false;
             rr = false;
             goUp = false;
-            wn = true;
         }
         else if (other.gameObject.tag == "Corner2") {
             tag1.SetActive(false);
@@ -114,7 +110,6 @@ public class Player : MonoBehaviour
             r = false;
             rr = false;
             goUp = false;
-            narrow = true;
         }
         else if (other.gameObject.tag == "Corner3") {
             tag1.SetActive(false);
@@ -128,7 +123,6 @@ public class Player : MonoBehaviour
             r = false;
             rr = false;
             goUp = false;
-            wide = true;
         }
         else if (other.gameObject.tag == "Corner4") {
             tag5.SetActive(false);
@@ -144,7 +138,6 @@ public class Player : MonoBehaviour
             r = false;
             rr = false;
             goUp = false;
-            wn = true;
         }
         else if (other.gameObject.tag == "Corner5") {
             tag9.SetActive(false);
@@ -158,7 +151,6 @@ public class Player : MonoBehaviour
             r = false;
             rr = false;
             goUp = false;
-            narrow = true;
         }
         else if (other.gameObject.tag == "Corner6") {
             tag9.SetActive(false);
@@ -172,7 +164,6 @@ public class Player : MonoBehaviour
             r = false;
             rr = false;
             goUp = false;
-            wide = true;
         }
         else if (other.gameObject.tag == "Corner7") {
             tag9.SetActive(false);
@@ -186,7 +177,6 @@ public class Player : MonoBehaviour
             r = false;
             rr = false;
             goUp = false;
-            narrow = true;
         }
         else if (other.gameObject.tag == "Success") {
             ll = false;
@@ -194,7 +184,6 @@ public class Player : MonoBehaviour
             r = false;
             rr = false;
             goUp = false;
-            narrow = false;
             elecDone = true;
             cam2.enabled = false;
             cam1.enabled = true;
@@ -207,9 +196,6 @@ public class Player : MonoBehaviour
             l = false;
             r = false;
             rr = false;
-            wide = false;
-            narrow = false;
-            wn = false;
         }
         else if (other.gameObject.tag == "DeadEnd") {
             transform.position = startPos;
